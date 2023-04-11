@@ -23,7 +23,7 @@ jobs:
 
     - name: Generate Environment Variables File for Production
       run: |
-          echo "SECRET_KEY=$SECRET_KEY">> secrets.json
+          echo "SECRET_KEY=$SECRET_KEY">> gcp.json
       env:
         # github settings -> secrets 에 설정해 두었던 변수를 사용합니다.
           SECRET_KEY: $ {{ secrets.GCP_JSON }}

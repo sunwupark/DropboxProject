@@ -19,6 +19,9 @@ router = APIRouter()
 
 with open("gcp.json", encoding='utf-8', errors='ignore') as json_data:
      data = json.load(json_data, strict=False)
+     print(data)
+
+print(data)
 
 cred = credentials.Certificate(data)
 firebase_admin.initialize_app(cred,

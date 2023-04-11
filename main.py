@@ -6,7 +6,7 @@ import json
 app = FastAPI()
 
 # Initialize Firebase credentials
-cred = credentials.Certificate("sunwutest-5c812-firebase-adminsdk-3983l-1239db8abf.json")
+cred = credentials.Certificate("gcp.json")
 firebase_admin.initialize_app(cred,
                               {'databaseURL':'https://sunwutest-5c812-default-rtdb.asia-southeast1.firebasedatabase.app/'})
 

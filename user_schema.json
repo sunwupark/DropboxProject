@@ -1,0 +1,26 @@
+{
+	"User1":
+	{
+		"id": 1,
+		"name": "sunwu",
+		"refresh_token": "123456"
+	},
+	"User2":
+	{
+		"id": 2,
+		"name": "hyeonseo",
+		"refresh_token": "234567"
+	},
+	"User3":
+	{
+		"id": 3,
+		"name": "yongwoo",
+		"refresh_token": "345678"
+	},
+	"User4":
+	{
+		"id": 4,
+		"name": "seungheon",
+		"refresh_token": "456789"
+	},
+}

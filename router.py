@@ -17,12 +17,10 @@ from services import login_service
 
 router = APIRouter()
 
-json_file_path = "gcp.json"
+with open("gcp.json", encoding='utf-8', errors='ignore') as json_data:
+     data = json.load(json_data, strict=False)
 
-with open(json_file_path, 'r') as j:
-     contents = json.loads(j.read())
-     
-cred = credentials.Certificate(contents)
+cred = credentials.Certificate(data)
 firebase_admin.initialize_app(cred,
                               {'databaseURL':'https://file-ground-default-rtdb.asia-southeast1.firebasedatabase.app//'})
 

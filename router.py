@@ -23,7 +23,7 @@ with open("gcp.json", encoding='utf-8', errors='ignore') as json_data:
 
 print(data)
 
-cred = credentials.Certificate(data)
+cred = credentials.Certificate("gcp.json")
 firebase_admin.initialize_app(cred,
                               {'databaseURL':'https://file-ground-default-rtdb.asia-southeast1.firebasedatabase.app//'})
 

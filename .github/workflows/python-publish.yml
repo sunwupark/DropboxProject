@@ -20,14 +20,13 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+
     - name: Build and Push Docker image
       uses: docker/build-push-action@v4
       with:
         context: .
         push: true
         tags: sunwupark/app:latest
-        secrets: | 
-          "github_token=${{ secrets.GCP_JSON }}"
     
   deploy:
     needs: build-and-push

@@ -27,7 +27,7 @@ jobs:
         push: true
         tags: sunwupark/app:latest
         secrets: | 
-          "github_token=${{secrets.GCP_JSON}}"
+          "github_token=${{ secrets.GCP_JSON }}"
     
   deploy:
     needs: build-and-push

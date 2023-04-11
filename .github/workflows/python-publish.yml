@@ -21,6 +21,14 @@ jobs:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
+    - name: Generate Environment Variables File for Production
+      run: |
+        # secrets.json이라는 파일을 만듭니다.
+          echo "SECRET_KEY=$SECRET_KEY">> secrets.json
+        env:
+        # github settings -> secrets 에 설정해 두었던 변수를 사용합니다.
+          SECRET_KEY: $ {{ secrets.GCP_JSON }}
+
     - name: Build and Push Docker image
       uses: docker/build-push-action@v4
       with:

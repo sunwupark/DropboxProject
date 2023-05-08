@@ -27,13 +27,6 @@ jobs:
       with:
         name: "gcp.json"
         json: ${{ secrets.GCP_JSON }}
-    
-    - name: create-json2
-      id: create-json2
-      uses: jsdaniell/create-json@1.1.2
-      with:
-        name: "suntest-revision1.json"
-        json: ${{ secrets.TASK_DEFINITION }}
         
     - name: Build and Push Docker image
       uses: docker/build-push-action@v4
@@ -72,7 +65,7 @@ jobs:
       - name: Deploy to ECS
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
-          task-definition: app/suntest-revision1.json
+          task-definition: cloud-task-revision1.json
           cluster: cloudcomputing
           service: cloudservice
           image: sunwupark/app:latest

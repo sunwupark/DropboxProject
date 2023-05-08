@@ -21,11 +21,12 @@ jobs:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_PASSWORD }}
 
-    - name: Generate Environment Variables File for Production
-      env:
-        SECRET_KEY: ${{ secrets.GCP_JSON }}
-      run: |
-        echo "SECRET_KEY=${SECRET_KEY}" >> gcp.json
+    - name: create-json
+      id: create-json
+      uses: jsdaniell/create-json@1.1.2
+      with:
+        name: "gcp.json"
+        json: ${{ secrets.GCP_JSON }}
         
     - name: Build and Push Docker image
       uses: docker/build-push-action@v4

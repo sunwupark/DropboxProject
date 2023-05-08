@@ -17,7 +17,7 @@ from services import login_service
 
 router = APIRouter()
 
-cred = credentials.Certificate("/app/gcp.json")
+cred = credentials.Certificate("file-ground-firebase-adminsdk-k8zwz-2dbb250413.json")
 firebase_admin.initialize_app(cred,
                               {'databaseURL':'https://file-ground-default-rtdb.asia-southeast1.firebasedatabase.app//'})
 

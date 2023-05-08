@@ -72,7 +72,7 @@ jobs:
       - name: Deploy to ECS
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
-          task-definition: suntest-revision1.json
+          task-definition: app/suntest-revision1.json
           cluster: cloudcomputing
           service: cloudservice
           image: sunwupark/app:latest
